@@ -272,5 +272,6 @@ namespace GradeBook.GradeBooks
         {
             Type = type;
         }
+
     }
 }

@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace GradeBook.GradeBooks
 {
-    public class StandardGradeBook : BaseGradeBook
+    public class RankedGradeBook : BaseGradeBook
     {
-        public StandardGradeBook(string name) : base(name)
-        {
-            Type = GradeBookType.Standard;
-        }
-
-        public StandardGradeBook(GradeBookType type, string name) : base(name)
+        public RankedGradeBook(string name) : base(name)
         {
             Type = GradeBookType.Ranked;
         }
+
+        public RankedGradeBook(GradeBookType name) : base(name)
+        {
+            Type = GradeBookType.Ranked;
+        }
+
     }
 }
