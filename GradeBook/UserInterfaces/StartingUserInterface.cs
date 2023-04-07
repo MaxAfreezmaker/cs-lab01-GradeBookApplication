@@ -27,8 +27,29 @@ namespace GradeBook.UserInterfaces
                 HelpCommand();
             else if (command == "quit")
                 Quit = true;
+            else if (command == "Name")
+                Name();
+            else if (command == "Type")
+                Type();
+            else if (command == "Weighted")
+                Weighted();
             else
                 Console.WriteLine("{0} was not recognized, please try again.", command);
+        }
+
+        public static void Weighted()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Name()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Type()
+        {
+            throw new NotImplementedException();
         }
 
         public static void CreateCommand(string command)
@@ -76,6 +97,10 @@ namespace GradeBook.UserInterfaces
 
             GradeBookUserInterface.CommandLoop(gradeBook);
         }
+        public static void Type(string command) 
+        {
+        
+        }
 
         public static void HelpCommand()
         {
@@ -87,6 +112,12 @@ namespace GradeBook.UserInterfaces
             Console.WriteLine("Load 'Name' - Loads the gradebook with the provided 'Name'.");
             Console.WriteLine();
             Console.WriteLine("Help - Displays all accepted commands.");
+            Console.WriteLine();
+            Console.WriteLine("Weighted - is whether or not grades should be weighted (true or false)");
+            Console.WriteLine();
+            Console.WriteLine("Name - is the name of the gradebook");
+            Console.WriteLine();
+            Console.WriteLine("Type - is what type of grading it should use");
             Console.WriteLine();
             Console.WriteLine("Quit - Exits the application");
         }
