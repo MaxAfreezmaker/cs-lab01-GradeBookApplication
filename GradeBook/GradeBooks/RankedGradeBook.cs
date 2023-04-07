@@ -1,15 +1,13 @@
-﻿using GradeBook.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace GradeBook.GradeBooks
 {
     public class RankedGradeBook : BaseGradeBook
     {
-        public RankedGradeBook(string name) : base(name)
+        public RankedGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
             this.Type = Enums.GradeBookType.Ranked;
         }
@@ -42,6 +40,7 @@ namespace GradeBook.GradeBooks
                 return 'F';
             }
         }
+
         public override void CalculateStatistics()
         {
             if (Students.Count < 5)
@@ -52,6 +51,14 @@ namespace GradeBook.GradeBooks
             base.CalculateStatistics();
         }
 
+        public override void CalculateStudentStatistics(string name)
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students.");
+                return;
+            }
+            base.CalculateStudentStatistics(name);
+        }
     }
 }
-
